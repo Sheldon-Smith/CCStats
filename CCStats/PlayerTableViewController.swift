@@ -22,6 +22,10 @@ class PlayerTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func backClick(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,14 +93,26 @@ class PlayerTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "playerDetail" {
+            print("player Detail")
+            if let destination = segue.destinationViewController as? PlayerDetailViewController{
+                destination.game = game
+                if let selectedPlayerCell = sender as? PlayerTableViewCell {
+                    let indexPath = tableView.indexPathForCell(selectedPlayerCell)!
+                    if indexPath.row < 6{
+                        destination.player = game.homePlayerList[indexPath.row]
+                    }else{
+                        destination.player = game.awayPlayerList[indexPath.row - 6]
+                    }
+                }
+            }
+        }
     }
-    */
+    
     
 }

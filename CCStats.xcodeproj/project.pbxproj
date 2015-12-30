@@ -19,6 +19,7 @@
 		7206C4B81C30BDA900644374 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4B71C30BDA900644374 /* Game.swift */; };
 		7206C4BD1C347F3800644374 /* PlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */; };
 		7206C4C21C34824300644374 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4C11C34824300644374 /* PlayerTableViewCell.swift */; };
+		7206C4C41C348C2800644374 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4C31C348C2800644374 /* PlayerDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		7206C4B71C30BDA900644374 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewController.swift; sourceTree = "<group>"; };
 		7206C4C11C34824300644374 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		7206C4C31C348C2800644374 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				7206C4B71C30BDA900644374 /* Game.swift */,
 				7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */,
 				7206C4C11C34824300644374 /* PlayerTableViewCell.swift */,
+				7206C4C31C348C2800644374 /* PlayerDetailViewController.swift */,
 			);
 			path = CCStats;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				7206C4B81C30BDA900644374 /* Game.swift in Sources */,
 				7206C4921C30A66300644374 /* AppDelegate.swift in Sources */,
 				7206C4C21C34824300644374 /* PlayerTableViewCell.swift in Sources */,
+				7206C4C41C348C2800644374 /* PlayerDetailViewController.swift in Sources */,
 				7206C4B41C30BA7C00644374 /* StarterViewController.swift in Sources */,
 				7206C4B61C30BBA000644374 /* Player.swift in Sources */,
 				7206C4941C30A66300644374 /* FirstViewController.swift in Sources */,

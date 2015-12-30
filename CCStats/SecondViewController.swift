@@ -23,11 +23,11 @@ class SecondViewController: UIViewController {
         let homeShotsMade = homeShootingMade()
         let homeShotsTaken = game.homeShotsTaken
         let homePercent = String(stringInterpolationSegment: round(homeShotsMade/homeShotsTaken * 100))
-        shotsTaken.text = "Shooting Percentage: \(homeShotsMade)/\(homeShotsTaken) = \(homePercent)%"
+        shotsTaken.text = "Shooting %: \(homeShotsMade)/\(homeShotsTaken) = \(homePercent)%"
         let awayShotsMade = awayShootingMade()
         let awayShotsTaken = game.awayShotsTaken
         let awayPercent = String(stringInterpolationSegment: round(awayShotsMade/awayShotsTaken * 100))
-        shotsTakenAway.text = "Shooting Percentage: \(awayShotsMade)/\(awayShotsTaken) = \(awayPercent)%"
+        shotsTakenAway.text = "Shooting %: \(awayShotsMade)/\(awayShotsTaken) = \(awayPercent)%"
         
         homeProgress.setProgress(Float(homeShotsMade/100.0), animated: true)
         awayProgress.setProgress(Float(awayShotsMade/100.0), animated: true)
