@@ -100,7 +100,6 @@ class FirstViewController: UIViewController {
             game.homePlayerList[game.homeTeamOrder[0]].bottomGays += 1
             let orderIndex = game.homeTeamOrder.removeAtIndex(0)
             game.homeTeamOrder.append(orderIndex)
-            print(game.homePlayerList)
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
             checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder)
         }else{

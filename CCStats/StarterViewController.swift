@@ -13,13 +13,14 @@ class StarterViewController: UIViewController {
     @IBOutlet weak var AddPlayerButton: UIButton!
     @IBOutlet weak var playerName: UITextField!
     @IBOutlet weak var playerCount: UILabel!
-    var playersCount = 0
+    @IBOutlet weak var startGameButton: UIButton!
     
+    var playersCount = 0
     var currGame = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startGameButton.enabled = false
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +34,10 @@ class StarterViewController: UIViewController {
             currGame.awayPlayerList.append(player)
         }
         playerName.text = ""
+        if playersCount == 12{
+            startGameButton.enabled = true
+            AddPlayerButton.enabled = false
+        }
     }
     
     override func didReceiveMemoryWarning() {

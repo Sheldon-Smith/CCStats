@@ -445,6 +445,7 @@
                         <outlet property="AddPlayerButton" destination="irD-V4-2as" id="UaK-sH-VGA"/>
                         <outlet property="playerCount" destination="Gpu-U3-Deq" id="V9K-bY-Wmq"/>
                         <outlet property="playerName" destination="DjV-JD-9cx" id="eU3-Vq-JN2"/>
+                        <outlet property="startGameButton" destination="Bng-f9-7gQ" id="CPo-zm-Z2U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6H-zw-J1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,6 +472,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cSl-2x-PPM"/>
+        <segue reference="wSo-oQ-Qs4"/>
     </inferredMetricsTieBreakers>
 </document>
