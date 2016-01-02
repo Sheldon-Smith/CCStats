@@ -27,7 +27,7 @@ class StarterViewController: UIViewController {
     @IBAction func addPlayerButton(sender: AnyObject) {
         playersCount += 1
         playerCount.text = String(playersCount)
-        var player = Player(name: playerName.text)
+        let player = Player(name: playerName.text!)
         if playersCount <= 6{
             currGame.homePlayerList.append(player)
         } else{
