@@ -16,6 +16,7 @@ class Player {
     var topGays:NSInteger
     var bottomGays:NSInteger
     var misses:NSInteger
+    var lastTen:Array<Bool>
     
     init(name:String){
         self.name = name
@@ -24,10 +25,28 @@ class Player {
         self.topGays = 0
         self.bottomGays = 0
         self.misses = 0
+        self.lastTen = []
     }
     
     func shotsMade() -> Int{
         return self.topMakes + self.bottomMakes + self.topGays + self.bottomGays
+    }
+    
+    func lastTenSummary() -> String{
+        var countMakes = 0
+        var countMisses = 0
+        if self.lastTen.count == 5{
+            for value in lastTen{
+                if value{
+                    countMakes += 1
+                }else{
+                    countMisses += 1
+                }
+            }
+            return "\(countMisses) Misses, \(countMakes) Makes in last 5"
+        }else{
+            return "Available after 5 shots"
+        }
     }
     
     

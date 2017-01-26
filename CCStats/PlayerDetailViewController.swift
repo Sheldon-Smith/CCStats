@@ -24,7 +24,7 @@ class PlayerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let totalMakes = player.topMakes + player.bottomMakes + player.topGays + player.bottomGays
+        let totalMakes = player.shotsMade()
         let totalShots = Double(totalMakes + player.misses)
         playerName.text = player.name
         trm.text = String(player.topMakes)

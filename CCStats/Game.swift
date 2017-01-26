@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Game {
+class Game{
     var homePlayerList = [Player]()
     var awayPlayerList = [Player]()
     var homeShotsTaken:Double

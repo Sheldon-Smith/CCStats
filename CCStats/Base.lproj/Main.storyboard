@@ -388,75 +388,7 @@
         <!--Starter View Controller-->
         <scene sceneID="K6o-4z-uDb">
             <objects>
-                <viewController id="A7p-k9-ENq" customClass="StarterViewController" customModule="CCStats" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QX8-8B-wnR"/>
-                        <viewControllerLayoutGuide type="bottom" id="LbB-YA-L7z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hDv-qT-wti">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bng-f9-7gQ">
-                                <rect key="frame" x="261" y="395" width="79" height="30"/>
-                                <state key="normal" title="Start Game">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8rJ-Kc-sve" kind="show" identifier="starterSegue" id="wSo-oQ-Qs4"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DjV-JD-9cx">
-                                <rect key="frame" x="206" y="174" width="189" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="189" id="uYd-7F-Khw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-oa-BWp">
-                                <rect key="frame" x="249" y="133" width="103" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irD-V4-2as">
-                                <rect key="frame" x="263" y="225" width="75" height="30"/>
-                                <state key="normal" title="Add Player">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPlayerButton:" destination="A7p-k9-ENq" eventType="touchUpInside" id="Aco-d8-O8M"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Players Added" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpu-U3-Deq">
-                                <rect key="frame" x="244" y="321" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Gpu-U3-Deq" secondAttribute="centerX" id="0Y3-SL-RKx"/>
-                            <constraint firstItem="Bng-f9-7gQ" firstAttribute="top" secondItem="Gpu-U3-Deq" secondAttribute="bottom" constant="53" id="4v8-LG-MiH"/>
-                            <constraint firstAttribute="centerX" secondItem="Bng-f9-7gQ" secondAttribute="centerX" constant="-0.5" id="9bA-VM-ZE0"/>
-                            <constraint firstItem="1bx-oa-BWp" firstAttribute="top" secondItem="QX8-8B-wnR" secondAttribute="bottom" constant="113" id="Di4-Ga-l6m"/>
-                            <constraint firstAttribute="centerX" secondItem="irD-V4-2as" secondAttribute="centerX" constant="-0.5" id="Fq3-lr-079"/>
-                            <constraint firstItem="Gpu-U3-Deq" firstAttribute="top" secondItem="irD-V4-2as" secondAttribute="bottom" constant="66" id="G4X-rF-trb"/>
-                            <constraint firstItem="irD-V4-2as" firstAttribute="top" secondItem="DjV-JD-9cx" secondAttribute="bottom" constant="21" id="I7U-Re-EYe"/>
-                            <constraint firstAttribute="centerX" secondItem="1bx-oa-BWp" secondAttribute="centerX" constant="-0.5" id="TAF-yT-DLS"/>
-                            <constraint firstAttribute="centerX" secondItem="DjV-JD-9cx" secondAttribute="centerX" constant="-0.5" id="m9H-gG-OJ3"/>
-                            <constraint firstItem="DjV-JD-9cx" firstAttribute="top" secondItem="1bx-oa-BWp" secondAttribute="bottom" constant="21" id="mdd-cB-5bd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="AddPlayerButton" destination="irD-V4-2as" id="UaK-sH-VGA"/>
-                        <outlet property="playerCount" destination="Gpu-U3-Deq" id="V9K-bY-Wmq"/>
-                        <outlet property="playerName" destination="DjV-JD-9cx" id="eU3-Vq-JN2"/>
-                        <outlet property="startGameButton" destination="Bng-f9-7gQ" id="CPo-zm-Z2U"/>
-                    </connections>
-                </viewController>
+                <viewController id="A7p-k9-ENq" customClass="StarterViewController" customModule="CCStats" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6H-zw-J1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-820" y="-56"/>
@@ -480,7 +412,4 @@
             <point key="canvasLocation" x="1678" y="-166"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="cSl-2x-PPM"/>
-    </inferredMetricsTieBreakers>
 </document>

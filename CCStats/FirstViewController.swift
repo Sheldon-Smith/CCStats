@@ -20,9 +20,11 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         if game.homeTeamUp{
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+            tenShotSummary.text = "Available after 5 shots"
             currTeam.text = "Team 1"
         }else {
             shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+            tenShotSummary.text = "Available after 5 shots"
             currTeam.text = "Team 2"
         }
         
@@ -38,17 +40,21 @@ class FirstViewController: UIViewController {
             let playerCount = game.homeTeamOrder.count
             game.homeShotsTaken += 1
             game.homePlayerList[game.homeTeamOrder[0]].topMakes += 1
+            trackLastTen(game.homePlayerList[game.homeTeamOrder[0]], made: true)
             let orderIndex = game.homeTeamOrder.removeAtIndex(0)
             game.homeTeamOrder.append(orderIndex)
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+            tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder)
         }else{
             let playerCount = game.awayTeamOrder.count
             game.awayShotsTaken += 1
             game.awayPlayerList[game.awayTeamOrder[0]].topMakes += 1
+            trackLastTen(game.awayPlayerList[game.awayTeamOrder[0]], made: true)
             let orderIndex = game.awayTeamOrder.removeAtIndex(0)
             game.awayTeamOrder.append(orderIndex)
             shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+            tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.awayTeamOrder)
         }
     }
@@ -58,17 +64,21 @@ class FirstViewController: UIViewController {
             let playerCount = game.homeTeamOrder.count
             game.homeShotsTaken += 1
             game.homePlayerList[game.homeTeamOrder[0]].bottomMakes += 1
+            trackLastTen(game.homePlayerList[game.homeTeamOrder[0]], made: true)
             let orderIndex = game.homeTeamOrder.removeAtIndex(0)
             game.homeTeamOrder.append(orderIndex)
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+            tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder)
         }else{
             let playerCount = game.awayTeamOrder.count
             game.awayShotsTaken += 1
             game.awayPlayerList[game.awayTeamOrder[0]].bottomMakes += 1
+            trackLastTen(game.awayPlayerList[game.awayTeamOrder[0]], made: true)
             let orderIndex = game.awayTeamOrder.removeAtIndex(0)
             game.awayTeamOrder.append(orderIndex)
             shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+            tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.awayTeamOrder)
         }
     }
@@ -78,17 +88,21 @@ class FirstViewController: UIViewController {
             let playerCount = game.homeTeamOrder.count
             game.homeShotsTaken += 1
             game.homePlayerList[game.homeTeamOrder[0]].topGays += 1
+            trackLastTen(game.homePlayerList[game.homeTeamOrder[0]], made: true)
             let orderIndex = game.homeTeamOrder.removeAtIndex(0)
             game.homeTeamOrder.append(orderIndex)
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+            tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder)
         }else{
             let playerCount = game.awayTeamOrder.count
             game.awayShotsTaken += 1
             game.awayPlayerList[game.awayTeamOrder[0]].topGays += 1
+            trackLastTen(game.awayPlayerList[game.awayTeamOrder[0]], made: true)
             let orderIndex = game.awayTeamOrder.removeAtIndex(0)
             game.awayTeamOrder.append(orderIndex)
             shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+            tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.awayTeamOrder)
         }
     }
@@ -98,17 +112,21 @@ class FirstViewController: UIViewController {
             let playerCount = game.homeTeamOrder.count
             game.homeShotsTaken += 1
             game.homePlayerList[game.homeTeamOrder[0]].bottomGays += 1
+            trackLastTen(game.homePlayerList[game.homeTeamOrder[0]], made: true)
             let orderIndex = game.homeTeamOrder.removeAtIndex(0)
             game.homeTeamOrder.append(orderIndex)
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+            tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder)
         }else{
             let playerCount = game.awayTeamOrder.count
             game.awayShotsTaken += 1
             game.awayPlayerList[game.awayTeamOrder[0]].bottomGays += 1
+            trackLastTen(game.awayPlayerList[game.awayTeamOrder[0]], made: true)
             let orderIndex = game.awayTeamOrder.removeAtIndex(0)
             game.awayTeamOrder.append(orderIndex)
             shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+            tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
             checkForEndOfTurn(playerCount, teamOrder: game.awayTeamOrder)
         }
     }
@@ -118,23 +136,27 @@ class FirstViewController: UIViewController {
             var playerCount = game.homeTeamOrder.count
             game.homeShotsTaken += 1
             game.homePlayerList[game.homeTeamOrder[0]].misses += 1
+            trackLastTen(game.homePlayerList[game.homeTeamOrder[0]], made: false)
             if playerCount == 2 && game.homeTeamOrder[0] > game.homeTeamOrder[1]{
                 playerCount -= 1
             }
-            let orderIndex = game.homeTeamOrder.removeAtIndex(0)
+            game.homeTeamOrder.removeAtIndex(0)
             if checkForEndOfTurn(playerCount, teamOrder: game.homeTeamOrder){
                 shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+                tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
             }
         }else{
             var playerCount = game.awayTeamOrder.count
             game.awayShotsTaken += 1
             game.awayPlayerList[game.awayTeamOrder[0]].misses += 1
+            trackLastTen(game.awayPlayerList[game.awayTeamOrder[0]], made: false)
             if playerCount == 2 && game.awayTeamOrder[0] > game.awayTeamOrder[1]{
                 playerCount -= 1
             }
-            let orderIndex = game.awayTeamOrder.removeAtIndex(0)
+            game.awayTeamOrder.removeAtIndex(0)
             if checkForEndOfTurn(playerCount, teamOrder: game.awayTeamOrder){
                 shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+                tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
             }
         }
     }
@@ -146,6 +168,7 @@ class FirstViewController: UIViewController {
                 game.homeTeamUp = false
                 game.homeTeamOrder = [0,1,2,3,4,5]
                 shooterName.text = game.awayPlayerList[game.awayTeamOrder[0]].name
+                tenShotSummary.text = game.awayPlayerList[game.awayTeamOrder[0]].lastTenSummary()
                 currTeam.text = "Team 2"
                 return false
             }
@@ -153,11 +176,21 @@ class FirstViewController: UIViewController {
                 game.homeTeamUp = true
                 game.awayTeamOrder = [0,1,2,3,4,5]
                 shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
+                tenShotSummary.text = game.homePlayerList[game.homeTeamOrder[0]].lastTenSummary()
                 currTeam.text = "Team 1"
                 return false
             }
         }else{
             return true
+        }
+    }
+    
+    func trackLastTen(player:Player, made:Bool) -> Void{
+        if player.lastTen.count == 5{
+            player.lastTen.removeAtIndex(0)
+            player.lastTen.append(made)
+        }else{
+            player.lastTen.append(made)
         }
     }
     
