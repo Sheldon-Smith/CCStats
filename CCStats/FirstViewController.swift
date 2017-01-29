@@ -16,8 +16,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var tenShotSummary: UILabel!
     @IBOutlet weak var currTeam: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if game.homeTeamUp{
             shooterName.text = game.homePlayerList[game.homeTeamOrder[0]].name
             tenShotSummary.text = "Available after 5 shots"

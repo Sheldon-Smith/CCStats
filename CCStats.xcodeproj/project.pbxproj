@@ -20,6 +20,8 @@
 		7206C4BD1C347F3800644374 /* PlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */; };
 		7206C4C21C34824300644374 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4C11C34824300644374 /* PlayerTableViewCell.swift */; };
 		7206C4C41C348C2800644374 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4C31C348C2800644374 /* PlayerDetailViewController.swift */; };
+		988727821E3D675500F420FB /* PlayerTableHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988727801E3D675500F420FB /* PlayerTableHomeViewCell.swift */; };
+		988727831E3D675500F420FB /* PlayerTableHomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988727811E3D675500F420FB /* PlayerTableHomeViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewController.swift; sourceTree = "<group>"; };
 		7206C4C11C34824300644374 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		7206C4C31C348C2800644374 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
+		988727801E3D675500F420FB /* PlayerTableHomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableHomeViewCell.swift; sourceTree = "<group>"; };
+		988727811E3D675500F420FB /* PlayerTableHomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerTableHomeViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				7206C49C1C30A66300644374 /* LaunchScreen.xib */,
 				7206C48F1C30A66300644374 /* Supporting Files */,
 				7206C4B31C30BA7C00644374 /* StarterViewController.swift */,
+				988727801E3D675500F420FB /* PlayerTableHomeViewCell.swift */,
+				988727811E3D675500F420FB /* PlayerTableHomeViewCell.xib */,
 				7206C4B51C30BBA000644374 /* Player.swift */,
 				7206C4B71C30BDA900644374 /* Game.swift */,
 				7206C4BB1C347F3800644374 /* PlayerTableViewController.swift */,
@@ -216,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7206C4991C30A66300644374 /* Main.storyboard in Resources */,
+				988727831E3D675500F420FB /* PlayerTableHomeViewCell.xib in Resources */,
 				7206C49E1C30A66300644374 /* LaunchScreen.xib in Resources */,
 				7206C49B1C30A66300644374 /* Images.xcassets in Resources */,
 			);
@@ -236,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7206C4BD1C347F3800644374 /* PlayerTableViewController.swift in Sources */,
+				988727821E3D675500F420FB /* PlayerTableHomeViewCell.swift in Sources */,
 				7206C4961C30A66300644374 /* SecondViewController.swift in Sources */,
 				7206C4B81C30BDA900644374 /* Game.swift in Sources */,
 				7206C4921C30A66300644374 /* AppDelegate.swift in Sources */,
