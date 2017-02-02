@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class StarterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
@@ -18,6 +19,7 @@ class StarterViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var playersCount = 0
     var currGame = Game()
+//    var gameEnt:NSEntityDescription
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +29,58 @@ class StarterViewController: UIViewController, UITableViewDataSource, UITableVie
         self.playerTable.delegate = self
         self.playerTable.dataSource = self
         self.playerName.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(StarterViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        
+        self.view.addGestureRecognizer(tap)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+//        gameEnt =  NSEntityDescription.entityForName("Game",inManagedObjectContext:context)!
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     @IBAction func addPlayerButton(sender: AnyObject) {
+//        savePlayer()
         action()
     }
     
+    func savePlayer() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        let entity =  NSEntityDescription.entityForName("Player",inManagedObjectContext:context)
+        let newPlayer = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
+        newPlayer.setValue(self.playerName?.text, forKey:"name")
+        newPlayer.setValue(self.playersCount, forKey:"id")
+        do{
+            try context.save()
+        }
+        catch{
+            print("failed")
+        }
+    }
+    
+    func saveGame() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        let entity =  NSEntityDescription.entityForName("Game",inManagedObjectContext:context)
+        let newGame = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
+        newGame.setValue(self.playerName?.text, forKey:"name")
+        newGame.setValue(self.playersCount, forKey:"id")
+        do{
+            try context.save()
+        }
+        catch{
+            print("failed")
+        }
+
+    }
     
     func action() {
         if self.playerName.text != "" {
@@ -104,6 +151,7 @@ class StarterViewController: UIViewController, UITableViewDataSource, UITableVie
         if segue.identifier == "starterSegue" {
             print("right segue")
             if let destination = segue.destinationViewController as? FirstViewController{
+//                saveGame()
                 print("set someting")
                 destination.game = currGame
             }

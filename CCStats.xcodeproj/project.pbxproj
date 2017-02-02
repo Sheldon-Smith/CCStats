@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1618D71F1E43A96500D9EC76 /* GameModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1618D71D1E43A96500D9EC76 /* GameModel.xcdatamodeld */; };
+		1671E3B61E43B51900DE5D8B /* GameTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1671E3B51E43B51900DE5D8B /* GameTransformer.swift */; };
 		7206C4921C30A66300644374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4911C30A66300644374 /* AppDelegate.swift */; };
 		7206C4941C30A66300644374 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4931C30A66300644374 /* FirstViewController.swift */; };
 		7206C4961C30A66300644374 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206C4951C30A66300644374 /* SecondViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1618D71E1E43A96500D9EC76 /* GameModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameModel.xcdatamodel; sourceTree = "<group>"; };
+		1671E3B51E43B51900DE5D8B /* GameTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTransformer.swift; sourceTree = "<group>"; };
 		7206C48C1C30A66300644374 /* CCStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7206C4901C30A66300644374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7206C4911C30A66300644374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7206C4911C30A66300644374 /* AppDelegate.swift */,
+				1618D71D1E43A96500D9EC76 /* GameModel.xcdatamodeld */,
 				7206C4931C30A66300644374 /* FirstViewController.swift */,
 				7206C4951C30A66300644374 /* SecondViewController.swift */,
 				7206C4971C30A66300644374 /* Main.storyboard */,
@@ -103,6 +108,7 @@
 				7206C49C1C30A66300644374 /* LaunchScreen.xib */,
 				7206C48F1C30A66300644374 /* Supporting Files */,
 				7206C4B31C30BA7C00644374 /* StarterViewController.swift */,
+				1671E3B51E43B51900DE5D8B /* GameTransformer.swift */,
 				988727801E3D675500F420FB /* PlayerTableHomeViewCell.swift */,
 				988727811E3D675500F420FB /* PlayerTableHomeViewCell.xib */,
 				7206C4B51C30BBA000644374 /* Player.swift */,
@@ -184,12 +190,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Graham Schilling";
 				TargetAttributes = {
 					7206C48B1C30A66300644374 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = N229ZQ27GZ;
+						DevelopmentTeam = 63GE67D6DP;
 					};
 					7206C4A21C30A66300644374 = {
 						CreatedOnToolsVersion = 6.4;
@@ -247,8 +253,10 @@
 				7206C4961C30A66300644374 /* SecondViewController.swift in Sources */,
 				7206C4B81C30BDA900644374 /* Game.swift in Sources */,
 				7206C4921C30A66300644374 /* AppDelegate.swift in Sources */,
+				1671E3B61E43B51900DE5D8B /* GameTransformer.swift in Sources */,
 				7206C4C21C34824300644374 /* PlayerTableViewCell.swift in Sources */,
 				7206C4C41C348C2800644374 /* PlayerDetailViewController.swift in Sources */,
+				1618D71F1E43A96500D9EC76 /* GameModel.xcdatamodeld in Sources */,
 				7206C4B41C30BA7C00644374 /* StarterViewController.swift in Sources */,
 				7206C4B61C30BBA000644374 /* Player.swift in Sources */,
 				7206C4941C30A66300644374 /* FirstViewController.swift in Sources */,
@@ -306,8 +314,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -335,6 +345,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -352,8 +363,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -372,6 +385,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -383,6 +398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 63GE67D6DP;
 				INFOPLIST_FILE = CCStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GS.$(PRODUCT_NAME:rfc1034identifier)";
@@ -397,6 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 63GE67D6DP;
 				INFOPLIST_FILE = CCStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GS.$(PRODUCT_NAME:rfc1034identifier)";
@@ -472,6 +489,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1618D71D1E43A96500D9EC76 /* GameModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1618D71E1E43A96500D9EC76 /* GameModel.xcdatamodel */,
+			);
+			currentVersion = 1618D71E1E43A96500D9EC76 /* GameModel.xcdatamodel */;
+			path = GameModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7206C4841C30A66300644374 /* Project object */;
 }
